@@ -14,9 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 /* Окно создания нового объявления продавцом */
 Route::get('/add_ad', function () {
     return view('add_ad');
 });
 /* Создание нового объявления */
 Route::post('/insert_ad', 'AdController@create');
+=======
+
+//окно создания нового заказа
+Route::get('/add_order', function(){
+	  return view('add_order');
+});
+
+//добавление нового заказ
+Route::post('/insert_order', 'OrderController@create');
+>>>>>>> eb8b6540bbf26ccee4bca6b3ab7a78e075afaab4

@@ -22,9 +22,15 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
-        //
+        $id = Order::create([
+            'product_id'=>$req->product_id,
+            'kg'=>$req->kg,
+            'price'=>$req->price
+        ]);
+
+        return view('add_order');
     }
 
     /**
