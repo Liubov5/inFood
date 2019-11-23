@@ -15,10 +15,10 @@ class CreateAdsTable extends Migration
     {
         Schema::create('ads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('seller_id');
-            $table->integer('region_id');
-            $table->integer('delivery_id');
-            $table->integer('category_id');
+            $table->integer('seller_id')->nullable();
+            $table->integer('region_id')->nullable();
+            $table->integer('delivery_id')->nullable();
+            $table->integer('category_id')->nullable();
             $table->integer('product_id');
             $table->integer('kg');
             $table->integer('price');

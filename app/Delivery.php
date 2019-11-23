@@ -10,4 +10,7 @@ class Delivery extends Model
     protected $fillable = [
         'delivery'
     ];
+    public function ads(){
+    	return $this->hasMany('App\Ad');
+    }
 }
