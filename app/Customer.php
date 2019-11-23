@@ -10,4 +10,7 @@ class Customer extends Model
     protected $fillable = [
         'user_id'
     ];
+    public function orders(){
+    	return $this->hasMany('App\Order');
+    }
 }

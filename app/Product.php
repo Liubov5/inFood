@@ -8,6 +8,12 @@ class Product extends Model
 {
     //
     protected $fillable = [
-        'product'
+        'product', 'category_id'
     ];
+    public function ads(){
+    	return $this->hasMany('App\Ad');
+    }
+     public function orders(){
+    	return $this->hasMany('App\Order');
+    }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Ad_Order;
+use App\Bid;
 use Illuminate\Http\Request;
 
-class AdOrderController extends Controller
+class BidController extends Controller
 {
     /**
      * Display a listing of the resource.

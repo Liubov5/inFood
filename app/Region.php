@@ -10,4 +10,8 @@ class Region extends Model
     protected $fillable = [
         'region'
     ];
+
+    public function ads(){
+    	return $this->hasMany('App\Ad');
+    }
 }
