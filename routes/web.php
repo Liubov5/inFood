@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+/* Окно создания нового объявления продавцом */
+Route::get('/add_ad', function () {
+    return view('add_ad');
+});
+/* Создание нового объявления */
+Route::post('/insert_ad', 'AdController@create');

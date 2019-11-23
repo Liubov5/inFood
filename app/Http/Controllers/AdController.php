@@ -22,9 +22,21 @@ class AdController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $ad = Ad::create([
+            'product_id' => $request->product_id,
+            'kg' => $request->kg,
+            'price' => $request->price
+        ]);
+
+        return view('add_ad', ['ad' => $ad]);
+        /*$ad = new Ad;
+        $ad->product_id = $request->product_id;
+        $ad->kg = $request->kg;
+        $ad->price = $request->price;
+        $ad->save();*/
+
     }
 
     /**
