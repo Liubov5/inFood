@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRoleUsersTable extends Migration
+class CreateReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateRoleUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('role_user', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('review');
+            $table->integer("stars");
+            $table->integer("customer_id");
+            $table->integer("seller_id");
+            $table->integer("product");
             $table->timestamps();
-            $table->integer('role_id');
-            $table->integer('user_id');
         });
     }
 
@@ -28,6 +31,6 @@ class CreateRoleUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_users');
+        Schema::dropIfExists('reviews');
     }
 }

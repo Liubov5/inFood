@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Seller extends Model
+class Order extends Model
 {
     //
     protected $fillable = [
-        'user_id'
+        'address', 'category_id', 'product_id', 'customer_id', 'kg', 'price'
     ];
 }
