@@ -15,5 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/add_order', 'OrderController@create');
+//окно создания нового заказа
+Route::get('/add_order', function(){
+	  return view('add_order');
+});
 
+//добавление нового заказ
+Route::post('/insert_order', 'OrderController@create');
