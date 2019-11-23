@@ -24,7 +24,13 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        Order::create([
+            'product_id'=>1,
+            'kg'=>3,
+            'price'=>400
+        ]);
+
+        return view('add_order');
     }
 
     /**
