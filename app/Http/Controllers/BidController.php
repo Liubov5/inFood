@@ -25,14 +25,12 @@ class BidController extends Controller
     public function create(Request $req)
     {
        $bid = Bid::create([
-            'ad_id'=>$req->ad_id,
-            'order_id'=>$req->order_id,
-            'price'=>$req->price,
-            'status'=>0,
+            'ad_id' =>$req->ad_id,
+            'order_id' =>$req->order_id,
+            'price' =>$req->price,
+            'status' => 0,
             'customer_id' => 5,
             'seller_id' => 2
-
-
         ]);
 
         return $bid;
@@ -61,7 +59,7 @@ class BidController extends Controller
 
        return view('customer_bids', compact('bids'));
     }
-
+    /* Показ продавцу всех своих bids (предложений) покупателям: */
     public function showSellerBids()
     {
         $bids = Bid::where('seller_id','=','2')->get();

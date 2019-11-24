@@ -16,20 +16,25 @@ Route::get('/', function () {
 });
 
 /* Окно создания нового объявления продавцом */
+<<<<<<< HEAD
+Route::get('/add_ad', 'ProductController@show');
+/* Создание нового объявления (сам запрос - insert) */
+=======
 Route::get('/add_ad', function () {
     //return Auth::user();
      view('add_ad');
 });
 /* Создание нового объявления */
+>>>>>>> 2ebcbd104334b7642ccf127f95b548c23abeba62
 Route::post('/insert_ad', 'AdController@create');
 
 
-//окно создания нового заказа
+//окно создания нового заказа покупателем
 Route::get('/add_order', function(){
 	  return view('add_order');
 });
 
-//добавление нового заказ
+//добавление нового заказ (сам запрос - insert)
 Route::post('/insert_order', 'OrderController@create');
 
 //это смотрит продавец: вывод всех заказов, которые совпадают с сущетвующими объявлениями у продавца

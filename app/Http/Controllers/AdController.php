@@ -27,9 +27,15 @@ class AdController extends Controller
     {
         $ad = Ad::create([
             'product_id' => $request->product_id,
+<<<<<<< HEAD
+            'region_id' => $request->region_id,
+            'delivery_id' => $request->delivery_id,
+            'price' => $request->price
+=======
             'kg' => $request->kg,
             'price' => $request->price,
             'seller_id'=>Auth::user()->id,
+>>>>>>> 2ebcbd104334b7642ccf127f95b548c23abeba62
         ]);
 
         if (Auth::check())

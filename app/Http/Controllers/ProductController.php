@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Region;
+use App\Delivery;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -44,9 +46,15 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show()
     {
-        //
+        //$product = Product::all()->get();
+
+        $products = Product::all();
+        $regions = Region::all();
+        $deliveries = Delivery::all();
+        //функция compact отправляет во вьюшку нужную переменную.
+        return view('add_ad', compact('products', 'regions', 'deliveries'));
     }
 
     /**
