@@ -65,7 +65,7 @@
 					<div class="col-lg-6 col-md-6 col-sm-12 mx-auto mt-4">
 						<div class="features-service-single rounded">
 							<div class="fes-ser-titel">
-								<h4>Куплю {{$product->product}} <span>{{ $order->price }} рублей</span> <span>{{ $order->kg }} </span> кг</h4>
+								<h4>Куплю {{$order->product_id}} <span>{{ $order->price }} рублей</span> <span>{{ $order->kg }} </span> кг</h4>
 
 								<div class="row">
 									<div class="col-md-3">
