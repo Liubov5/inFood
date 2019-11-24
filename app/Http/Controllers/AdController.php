@@ -26,17 +26,19 @@ class AdController extends Controller
     public function create(Request $request)
     {
         $ad = Ad::create([
+            'seller_id' => 2,
             'product_id' => $request->product_id,
             'region_id' => $request->region_id,
             'delivery_id' => $request->delivery_id,
             'price' => $request->price,  
-            'seller_id'=>2,
-
         ]);
+
 
        
         return redirect('/select_order');
         
+
+        //return view('add_ad', ['ad' => $ad]);
         /*$ad = new Ad;
         $ad->product_id = $request->product_id;
         $ad->kg = $request->kg;

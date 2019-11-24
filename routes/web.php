@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/add_ad', 'ProductController@show');
 /* Создание нового объявления (сам запрос - insert) */
 
+/* Создание нового объявления */
+
+
 
 /* Создание нового объявления */
 
@@ -27,9 +30,7 @@ Route::post('/insert_ad', 'AdController@create');
 
 
 //окно создания нового заказа покупателем
-Route::get('/add_order', function(){
-	  return view('add_order');
-});
+Route::get('/add_order', 'ProductController@showAd');
 
 //добавление нового заказ (сам запрос - insert)
 Route::post('/insert_order', 'OrderController@create');
@@ -46,9 +47,3 @@ Route::get('/customer_bids', 'BidController@show');
 Route::post('/update_bid', 'BidController@update');
 //это смотрит продавец: вывод своих bids (предложений) покупателям
 Route::get('/seller_bids', 'BidController@showSellerBids');
-
-
-
-
-
-

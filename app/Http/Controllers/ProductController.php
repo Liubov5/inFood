@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Region;
 use App\Delivery;
+use App\Ad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -57,6 +59,13 @@ class ProductController extends Controller
         return view('add_ad', compact('products', 'regions', 'deliveries'));
     }
 
+    public function showAd()
+    {
+        //$products = AD::all()->product;
+       $products = DB::table('products')->get();
+        return view('add_order', compact('products'));
+    }
+     
     /**
      * Show the form for editing the specified resource.
      *
