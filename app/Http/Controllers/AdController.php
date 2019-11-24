@@ -35,7 +35,8 @@ class AdController extends Controller
         ]);
 
        
-        //return view('add_ad', ['ad' => $ad]);
+        return redirect('/select_order');
+        
         /*$ad = new Ad;
         $ad->product_id = $request->product_id;
         $ad->kg = $request->kg;

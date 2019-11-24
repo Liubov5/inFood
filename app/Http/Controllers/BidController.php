@@ -33,7 +33,7 @@ class BidController extends Controller
             'seller_id' => 2
         ]);
 
-        return $bid;
+        return redirect("/seller_bids");
     }
 
     /**
@@ -56,7 +56,7 @@ class BidController extends Controller
     public function show()
     {
        $bids =  Bid::where('customer_id','=','5')->where('status','=','0')->get();
-
+       
        return view('customer_bids', compact('bids'));
     }
     /* Показ продавцу всех своих bids (предложений) покупателям: */

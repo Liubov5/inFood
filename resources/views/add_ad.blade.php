@@ -38,14 +38,20 @@
 
 <body>
 	<div class="row pt--100">
-	    <div class="col-md-12">
-	        <div class="section__title text-center mb--50">
-	            <h2 class="title__line">Хочу продать</h2>
-	        </div>
+		<div class="col-8 mx-auto">
+	    		<a href="/select_order">Новые заказы</a>
+	    	</div>
+	    <div class="col-md-12 ">
+	    	
+	    	
+	       
 	    </div>
 	</div>
 
 	<div class="col-md-6 mx-auto">
+		 <div class="text-center  mb--50">
+	            <h2 class="title__line">Хочу продать</h2>
+	        </div>
 	    <form action="/insert_ad" method="POST" class="col-md-6 mx-auto">
 	    @csrf
 	        <div class="row">
