@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -52,7 +53,12 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        //$orders = Order::all();
+        //окно продавца, где выводятся все подходящие заказы + заменить id сессии юзера.
+        $orders = DB::table('ads')->join('orders', 'orders.product_id', '=', 'ads.product_id')->where('seller_id', '=', '2')->get();
+        
+        return view('seller_orders', compact('orders'));
+
     }
 
     /**

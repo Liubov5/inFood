@@ -30,4 +30,12 @@ Route::get('/add_order', function(){
 
 //добавление нового заказ
 Route::post('/insert_order', 'OrderController@create');
+//вывод всех заказов, которые совпадают с сущетвующими объявлениями
+Route::get('/select_order', 'OrderController@show');
 
+Route::post('/insert_bid', 'BidController@create');
+
+Route::get('/customer_bids', 'BidController@show');
+
+
+Route::post('/update_bid', 'BidController@update');

@@ -18,7 +18,7 @@ class CreateBidsTable extends Migration
             $table->integer("ad_id")->nullable();
             $table->integer("order_id");
             $table->integer("price");
-            $table->integer("status");
+            $table->integer("status")->nullable();
             $table->timestamps();
         });
     }

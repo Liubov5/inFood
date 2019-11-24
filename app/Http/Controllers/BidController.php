@@ -22,9 +22,17 @@ class BidController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
-        //
+       $bid = Bid::create([
+            'ad_id'=>$req->ad_id,
+            'order_id'=>$req->order_id,
+            'price'=>$req->price,
+            'status'=>0,
+
+        ]);
+
+        return $bid;
     }
 
     /**
@@ -44,9 +52,11 @@ class BidController extends Controller
      * @param  \App\Ad_Order  $ad_Order
      * @return \Illuminate\Http\Response
      */
-    public function show(Ad_Order $ad_Order)
+    public function show()
     {
-        //
+       $bids =  Bid::where('customer_id','=','5')->where('status','=','0')->get();
+
+       return view('customer_bids', compact('bids'));
     }
 
     /**
@@ -55,7 +65,7 @@ class BidController extends Controller
      * @param  \App\Ad_Order  $ad_Order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ad_Order $ad_Order)
+    public function edit()
     {
         //
     }
@@ -67,9 +77,11 @@ class BidController extends Controller
      * @param  \App\Ad_Order  $ad_Order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ad_Order $ad_Order)
+    public function update(Request $request)
     {
-        //
+       $bid =  Bid::find($request->bid_id);
+       $bid->status = $request->status;
+       $bid->save();
     }
 
     /**
