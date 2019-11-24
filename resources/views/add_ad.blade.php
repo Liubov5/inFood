@@ -7,6 +7,8 @@
 <body>
 	<h1>Создание нового объявления продавцом:</h1>
 	<!-- insert -->
+
+	{{Auth::user()->phone}}
 	<form action="/insert_ad" method="POST">
 		@csrf
 		<input type="text" placeholder="product_id" name="product_id">

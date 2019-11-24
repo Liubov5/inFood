@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdController extends Controller
 {
@@ -26,12 +27,26 @@ class AdController extends Controller
     {
         $ad = Ad::create([
             'product_id' => $request->product_id,
+<<<<<<< HEAD
             'region_id' => $request->region_id,
             'delivery_id' => $request->delivery_id,
             'price' => $request->price
+=======
+            'kg' => $request->kg,
+            'price' => $request->price,
+            'seller_id'=>Auth::user()->id,
+>>>>>>> 2ebcbd104334b7642ccf127f95b548c23abeba62
         ]);
 
-        return view('add_ad', ['ad' => $ad]);
+        if (Auth::check())
+        {
+            return "yes";
+        }
+        else{
+            return "no";
+        }
+
+        //return view('add_ad', ['ad' => $ad]);
         /*$ad = new Ad;
         $ad->product_id = $request->product_id;
         $ad->kg = $request->kg;
