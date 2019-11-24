@@ -14,3 +14,28 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* Окно создания нового объявления продавцом */
+Route::get('/add_ad', function () {
+    return view('add_ad');
+});
+/* Создание нового объявления */
+Route::post('/insert_ad', 'AdController@create');
+
+
+//окно создания нового заказа
+Route::get('/add_order', function(){
+	  return view('add_order');
+});
+
+//добавление нового заказ
+Route::post('/insert_order', 'OrderController@create');
+//вывод всех заказов, которые совпадают с сущетвующими объявлениями
+Route::get('/select_order', 'OrderController@show');
+
+Route::post('/insert_bid', 'BidController@create');
+
+Route::get('/customer_bids', 'BidController@show');
+
+
+Route::post('/update_bid', 'BidController@update');
