@@ -5,21 +5,20 @@
 	<title>Document</title>
 </head>
 <body>
+	<h1>Заказы покупателей:</h1>
 	@foreach($orders as $order)
-	<p>{{ $order->kg }}</p>
-	<p>{{ $order->price }}</p>
-	<p>{{ $order->ads_id }}</p>
-	<p>{{ $order->id }}</p>
+	<p><span>Кг: </span>{{ $order->kg }}</p>
+	<p><span>Купит за: </span>{{ $order->price }}<span> рублей.</span></p>
+	<p><span>id-объявления: </span>{{ $order->ads_id }}</p>
+	<p><span>id-заказа: </span>{{ $order->id }}</p>
 	
 	<form action="/insert_bid" method="POST">
 		@csrf
-		<input type="text" name="ad_id" value="{{$order->ads_id}}">
-		<input type="text" name="order_id" value="{{$order->id}}">
-		<input type="text" name="price" placeholder="своя цена от продавца">
+		<input type="hidden" name="ad_id" value="{{ $order->ads_id }}">
+		<input type="hidden" name="order_id" value="{{ $order->id }}">
+		<input type="text" name="price" placeholder="Своя цена от продавца">
 		<button>Предложить свою цену</button>
 	</form>
 	@endforeach
-
-	
 </body>
 </html>

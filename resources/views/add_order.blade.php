@@ -5,7 +5,7 @@
 	<title>Document</title>
 </head>
 <body>
-	
+	<h1>Создание нового заказа покупателем:</h1>
 	<form action="/insert_order" method="POST">
 		@csrf
 		<input type="text" name="product_id" placeholder="продукт">

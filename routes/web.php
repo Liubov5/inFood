@@ -19,16 +19,16 @@ Route::get('/', function () {
 Route::get('/add_ad', function () {
     return view('add_ad');
 });
-/* Создание нового объявления */
+/* Создание нового объявления (сам запрос - insert) */
 Route::post('/insert_ad', 'AdController@create');
 
 
-//окно создания нового заказа
+//окно создания нового заказа покупателем
 Route::get('/add_order', function(){
 	  return view('add_order');
 });
 
-//добавление нового заказ
+//добавление нового заказ (сам запрос - insert)
 Route::post('/insert_order', 'OrderController@create');
 
 //это смотрит продавец: вывод всех заказов, которые совпадают с сущетвующими объявлениями у продавца
