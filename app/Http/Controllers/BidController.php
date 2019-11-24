@@ -29,6 +29,9 @@ class BidController extends Controller
             'order_id'=>$req->order_id,
             'price'=>$req->price,
             'status'=>0,
+            'customer_id' => 5,
+            'seller_id' => 2
+
 
         ]);
 
@@ -57,6 +60,13 @@ class BidController extends Controller
        $bids =  Bid::where('customer_id','=','5')->where('status','=','0')->get();
 
        return view('customer_bids', compact('bids'));
+    }
+
+    public function showSellerBids()
+    {
+        $bids = Bid::where('seller_id','=','2')->get();
+        return view('seller_bids', compact('bids'));
+
     }
 
     /**
