@@ -20,7 +20,7 @@ class CreateAdsTable extends Migration
             $table->integer('delivery_id')->nullable();
             $table->integer('category_id')->nullable();
             $table->integer('product_id');
-            $table->integer('kg');
+            $table->integer('kg')->nullable();
             $table->integer('price');
             $table->timestamps();
         });

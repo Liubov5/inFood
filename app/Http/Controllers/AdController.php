@@ -26,7 +26,8 @@ class AdController extends Controller
     {
         $ad = Ad::create([
             'product_id' => $request->product_id,
-            'kg' => $request->kg,
+            'region_id' => $request->region_id,
+            'delivery_id' => $request->delivery_id,
             'price' => $request->price
         ]);
 
