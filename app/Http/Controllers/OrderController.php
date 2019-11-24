@@ -57,13 +57,13 @@ class OrderController extends Controller
     {
         //$orders = Order::all();
         //окно продавца, где выводятся все подходящие заказы + заменить id сессии юзера.
-        $orders = DB::table('orders')->join('ads', 'orders.product_id', '=', 'ads.product_id')->where('seller_id', '=', '2')->get();
+        $orders = DB::table('ads')->join('orders', 'orders.product_id', '=', 'ads.product_id')->where('seller_id', '=', '2')->get();
         
-        /*foreach ($orders as $order) {
+        foreach ($orders as $order) {
             $product = Product::find($order->product_id);
-        }*/
+        }
         
-       return view('seller_orders', compact('orders'));
+       return view('seller_orders', compact('orders','product'));
 
     }
 

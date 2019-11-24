@@ -65,7 +65,7 @@
 					<div class="col-lg-6 col-md-6 col-sm-12 mx-auto mt-4">
 						<div class="features-service-single rounded">
 							<div class="fes-ser-titel">
-								<h4>Куплю {{$order->product_id}} <span>{{ $order->price }} рублей</span> <span>{{ $order->kg }} </span> кг</h4>
+								<h4>Куплю {{$product->product}} <span>{{ $order->price }} рублей</span> <span>{{ $order->kg }} </span> кг</h4>
 
 								<div class="row">
 									<div class="col-md-3">
@@ -85,8 +85,8 @@
 								@csrf						
 									<div class="row">										
 										<div class="col-md-6">
-											<input name="ad_id" value="{{ $order->ads_id }}">
-											<input  name="order_id" value="{{ $order->id }}">
+											<input type="hidden" name="ad_id" value="{{ $order->ads_id }}">
+											<input type="hidden"  name="order_id" value="{{ $order->id }}">
 											<input type="" name="price" placeholder="Предложить свою цену" class="border rounded col-12 btn">
 										</div>
 										<div class="col-md-6">
