@@ -6,6 +6,7 @@ use App\Product;
 use App\Region;
 use App\Delivery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -57,6 +58,12 @@ class ProductController extends Controller
         return view('add_ad', compact('products', 'regions', 'deliveries'));
     }
 
+    public function showAd()
+    {
+        $ads = DB::table('products')->join('ads', 'products.id', '=', 'ads.product_id')->get();
+        return view('add_order', compact('ads'));
+    }
+     
     /**
      * Show the form for editing the specified resource.
      *

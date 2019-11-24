@@ -19,21 +19,18 @@ Route::get('/', function () {
 
 Route::get('/add_ad', 'ProductController@show');
 /* Создание нового объявления (сам запрос - insert) */
-<<<<<<< HEAD
-/* Создание нового объявления */
-=======
-
 
 /* Создание нового объявления */
 
->>>>>>> 5c16a6b9e3aa03edc3b3cd7d309adb03d81cdef7
+
+
+/* Создание нового объявления */
+
 Route::post('/insert_ad', 'AdController@create');
 
 
 //окно создания нового заказа покупателем
-Route::get('/add_order', function(){
-	  return view('add_order');
-});
+Route::get('/add_order', 'ProductController@showAd');
 
 //добавление нового заказ (сам запрос - insert)
 Route::post('/insert_order', 'OrderController@create');
