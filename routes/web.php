@@ -16,16 +16,13 @@ Route::get('/', function () {
 });
 
 /* Окно создания нового объявления продавцом */
-<<<<<<< HEAD
+
 Route::get('/add_ad', 'ProductController@show');
 /* Создание нового объявления (сам запрос - insert) */
-=======
-Route::get('/add_ad', function () {
-    //return Auth::user();
-     view('add_ad');
-});
+
+
 /* Создание нового объявления */
->>>>>>> 2ebcbd104334b7642ccf127f95b548c23abeba62
+
 Route::post('/insert_ad', 'AdController@create');
 
 

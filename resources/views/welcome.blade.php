@@ -49,6 +49,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Features Service Single -->
+                    
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="features-service-single rounded">
                             <div class="fes-ser-titel text-center">
@@ -62,14 +63,20 @@
 
                     <!-- Features Service Single -->
                     <!-- Features Service Single -->
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="features-service-single rounded">
-                            <div class="fes-ser-titel text-center ">
-                                <span><i class="icofont icofont-truck-alt"></i></span>
-                                <h4>Я ПРОДАВЕЦ</h4>
+                    
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                           
+                           <a href="/add_ad">
+                            <div class="features-service-single rounded">
+                                <div class="fes-ser-titel text-center ">
+                                    <span><i class="icofont icofont-truck-alt"></i></span>
+                                    <h4>Я ПРОДАВЕЦ</h4>
+                                </div>
                             </div>
+                         </a>
                         </div>
-                    </div>
+                      
+                    
                     <!-- Features Service Single -->
                 </div>
             </div>
