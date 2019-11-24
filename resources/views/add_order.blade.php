@@ -35,15 +35,6 @@
 </head>
 
 <body>
-	@foreach($products as $product)
-	   <option value="{{ $product->id }}">{{ $product->product }}</option>
-	@endforeach  
-
-
-
-
-
-
 				<div class="row pt--100">
                     <div class="col-md-12">
                         <div class="section__title text-center mb--50">

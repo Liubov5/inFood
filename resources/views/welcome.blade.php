@@ -51,12 +51,14 @@
                     <!-- Features Service Single -->
                     
                     <div class="col-lg-6 col-md-6 col-sm-12">
+                        <a href="/add_order">
                         <div class="features-service-single rounded">
                             <div class="fes-ser-titel text-center">
                                 <span><i class="icofont icofont-cart-alt"></i></span>
                                 <h4>Я ПОКУПАТЕЛЬ</h4>
                             </div>
                         </div>
+                        </a>
                     </div>
                     <!-- Features Service Single -->
                     <!-- Features Service Single -->
