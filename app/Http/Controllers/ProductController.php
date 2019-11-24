@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Region;
 use App\Delivery;
+use App\Ad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -60,8 +61,9 @@ class ProductController extends Controller
 
     public function showAd()
     {
-        $ads = DB::table('products')->join('ads', 'products.id', '=', 'ads.product_id')->get();
-        return view('add_order', compact('ads'));
+        //$products = AD::all()->product;
+       $products = DB::table('products')->get();
+        return view('add_order', compact('products'));
     }
      
     /**

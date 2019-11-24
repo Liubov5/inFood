@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	<h1>Создание нового заказа покупателем:</h1>
-	<form action="/insert_order" method="POST">
-		@csrf
-		<input type="text" name="product_id" placeholder="продукт">
-		<input type="text" name="kg" placeholder="кг">
-		<input type="text" name="price" placeholder="цена">
-		<button type="submit">Добавить</button>
-	</form>
-</body>
-</html>
-
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -53,8 +35,8 @@
 </head>
 
 <body>
-	@foreach($regions as $region)
-	            		<option value="{{ $region->id }}">{{ $region->region }}</option>
+	@foreach($products as $product)
+	   <option value="{{ $product->id }}">{{ $product->product }}</option>
 	@endforeach  
 
 
@@ -71,29 +53,18 @@
                 </div>
               
                     <div class="col-md-6 mx-auto">
-                        <form method="" class="col-md-6 mx-auto">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p>Выбрать категорию</p>
-                                </div>
-                                <div class="col-md-6">
-                                     <select class="btn-group ">
-                                        <option></option>
-                                        <option>рыба</option>
-                                        <option>мясо</option>
-                                    </select>                                 
-                                </div>
-                            </div>
+                        <form method="POST" action="/insert_order" class="col-md-6 mx-auto">
+                        	@csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <p>Выбрать товар</p>
                                 </div>
                                 <div class="col-md-6">
-                                     <select class="btn-group ">
-                                        <option></option>
-                                        <option>чир</option>
-                                        <option>карась</option>
-                                    </select>                                 
+                                     <select class="btn-group " name="product_id">
+                                      @foreach($products as $product)
+	  		 						<option value="{{ $product->id }}">{{ $product->product }}</option>
+									@endforeach
+                                    </select>           
                                 </div>
                             </div> 
                             
@@ -103,7 +74,7 @@
                                 </div>
                                 <div class="col-md-6">
                                         <div class="contact-box name_email">
-                                            <input type="text" name="name" placeholder="средняя цена" class="">
+                                            <input type="text" name="price" placeholder="средняя цена" class="">
                                         </div>
                                 </div>
                             </div> 
@@ -113,7 +84,7 @@
                                 </div>
                                 <div class="col-md-6">
                                         <div class="contact-box name_email">
-                                            <input type="text" name="name" placeholder="укажите вес" class="">
+                                            <input type="text" name="kg" placeholder="укажите вес" class="">
                                         </div>                               
                                 </div>
                             </div>

@@ -28,10 +28,11 @@ class OrderController extends Controller
         $id = Order::create([
             'product_id'=>$req->product_id,
             'kg'=>$req->kg,
-            'price'=>$req->price
+            'price'=>$req->price,
+            'customer_id' => 5
         ]);
 
-        return view('add_order');
+        return redirect('/add_order');
     }
 
     /**
