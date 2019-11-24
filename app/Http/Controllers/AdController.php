@@ -26,25 +26,12 @@ class AdController extends Controller
     public function create(Request $request)
     {
         $ad = Ad::create([
+            'seller_id' => 2,
             'product_id' => $request->product_id,
-<<<<<<< HEAD
             'region_id' => $request->region_id,
             'delivery_id' => $request->delivery_id,
             'price' => $request->price
-=======
-            'kg' => $request->kg,
-            'price' => $request->price,
-            'seller_id'=>Auth::user()->id,
->>>>>>> 2ebcbd104334b7642ccf127f95b548c23abeba62
         ]);
-
-        if (Auth::check())
-        {
-            return "yes";
-        }
-        else{
-            return "no";
-        }
 
         //return view('add_ad', ['ad' => $ad]);
         /*$ad = new Ad;
