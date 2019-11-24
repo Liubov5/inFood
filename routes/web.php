@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 /* Окно создания нового объявления продавцом */
 Route::get('/add_ad', function () {
-    return view('add_ad');
+    //return Auth::user();
+     view('add_ad');
 });
 /* Создание нового объявления */
 Route::post('/insert_ad', 'AdController@create');
@@ -43,6 +44,9 @@ Route::get('/customer_bids', 'BidController@show');
 Route::post('/update_bid', 'BidController@update');
 //это смотрит продавец: вывод своих bids (предложений) покупателям
 Route::get('/seller_bids', 'BidController@showSellerBids');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
