@@ -43,3 +43,6 @@ Route::get('/customer_bids', 'BidController@show');
 Route::post('/update_bid', 'BidController@update');
 //это смотрит продавец: вывод своих bids (предложений) покупателям
 Route::get('/seller_bids', 'BidController@showSellerBids');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
