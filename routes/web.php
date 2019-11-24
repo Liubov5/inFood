@@ -19,7 +19,14 @@ Route::get('/', function () {
 
 Route::get('/add_ad', 'ProductController@show');
 /* Создание нового объявления (сам запрос - insert) */
+<<<<<<< HEAD
 /* Создание нового объявления */
+=======
+
+
+/* Создание нового объявления */
+
+>>>>>>> 5c16a6b9e3aa03edc3b3cd7d309adb03d81cdef7
 Route::post('/insert_ad', 'AdController@create');
 
 

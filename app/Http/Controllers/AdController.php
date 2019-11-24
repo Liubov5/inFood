@@ -30,7 +30,7 @@ class AdController extends Controller
             'product_id' => $request->product_id,
             'region_id' => $request->region_id,
             'delivery_id' => $request->delivery_id,
-            'price' => $request->price
+          'price' => $request->price,  
         ]);
 
         //return view('add_ad', ['ad' => $ad]);
